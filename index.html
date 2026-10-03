@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!-- =========================
+     CARD UNIVERSE - HTML
+     ========================= -->
+
+<div id="loginScreen" class="login-screen">
+  <div class="login-box">
+    <div class="logo">🃏</div>
+    <h1>Card Universe</h1>
+    <p>Inicia sesión para entrar a tu colección.</p>
+
+    <form id="loginForm">
+      <label for="username">Usuario</label>
+      <input
+        id="username"
+        type="text"
+        autocomplete="username"
+        placeholder="Usuario"
+        required
+      >
+
+      <label for="password">Contraseña</label>
+      <input
+        id="password"
+        type="password"
+        autocomplete="current-password"
+        placeholder="Contraseña"
+        required
+      >
+
+      <button type="submit" class="primary-button">
+        Entrar
+      </button>
+
+      <div id="loginError" class="login-error"></div>
+    </form>
+
+    <div class="login-help">
+      <small>Card Universe</small>
+    </div>
+  </div>
+</div>
+
+
+<div id="gameScreen" class="game-screen hidden">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">🃏</span>
+      <span>Card Universe</span>
+    </div>
+
+    <div class="user-area">
+      <div class="user-info">
+        <strong id="topUsername">Usuario</strong>
+        <span id="topRole">Jugador</span>
+      </div>
+
+      <div class="points-box">
+        <span>⭐</span>
+        <strong id="topPoints">0</strong>
+      </div>
+
+      <button id="logoutButton" class="small-button danger-button">
+        Salir
+      </button>
+    </div>
+  </header>
+
+
+  <nav class="main-nav">
+    <button class="nav-button active" data-section="packsSection">
+      📦 Sobres
+    </button>
+
+    <button class="nav-button" data-section="inventorySection">
+      🃏 Colección
+    </button>
+
+    <button class="nav-button" data-section="yagosSection">
+      👤 Yagos
+    </button>
+
+    <button class="nav-button" data-section="historySection">
+      📜 Historial
+    </button>
+
+    <button class="nav-button" data-section="settingsSection">
+      ⚙️ Ajustes
+    </button>
+
+    <button
+      id="adminNavButton"
+      class="nav-button admin-nav-button hidden"
+      data-section="adminSection"
+    >
+      🛠️ Admin
+    </button>
+  </nav>
+
+
+  <main class="main-content">
+
+    <!-- =========================
+         SOBRES
+         ========================= -->
+
+    <section id="packsSection" class="game-section active-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>📦 Sobres</h2>
+          <p>Abre sobres y consigue nuevos Yagos.</p>
+        </div>
+      </div>
+
+      <div class="packs-grid">
+
+        <article class="pack-card pack-basic">
+          <div class="pack-envelope">
+            <div class="pack-ribbon"></div>
+            <div class="pack-symbol">🥁</div>
+            <div class="pack-title">BASIC</div>
+            <div class="pack-subtitle">Sobre básico</div>
+          </div>
+
+          <div class="pack-info">
+            <h3>Sobre Básico</h3>
+            <p>3 cartas</p>
+
+            <div class="pack-price">
+              ⭐ <strong>1000</strong>
+            </div>
+
+            <button
+              class="pack-button"
+              data-pack="basic"
+            >
+              Abrir sobre
+            </button>
+          </div>
+        </article>
+
+
+        <article class="pack-card pack-premium">
+          <div class="pack-envelope">
+            <div class="pack-ribbon"></div>
+            <div class="pack-symbol">👑</div>
+            <div class="pack-title">PREMIUM</div>
+            <div class="pack-subtitle">Sobre premium</div>
+          </div>
+
+          <div class="pack-info">
+            <h3>Sobre Premium</h3>
+            <p>5 cartas</p>
+
+            <div class="pack-price">
+              ⭐ <strong>1500</strong>
+            </div>
+
+            <button
+              class="pack-button"
+              data-pack="premium"
+            >
+              Abrir sobre
+            </button>
+          </div>
+        </article>
+
+
+        <article class="pack-card pack-elite">
+          <div class="pack-envelope">
+            <div class="pack-ribbon"></div>
+            <div class="pack-symbol">💎</div>
+            <div class="pack-title">ELITE</div>
+            <div class="pack-subtitle">Sobre elite</div>
+          </div>
+
+          <div class="pack-info">
+            <h3>Sobre Elite</h3>
+            <p>5 cartas</p>
+
+            <div class="pack-price">
+              ⭐ <strong>5000</strong>
+            </div>
+
+            <button
+              class="pack-button"
+              data-pack="elite"
+            >
+              Abrir sobre
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+
+      <div class="drop-rates">
+        <h3>Probabilidades</h3>
+
+        <div class="rates-grid">
+          <div class="rate-item rank-d">
+            <strong>D</strong>
+            <span>Común</span>
+            <b>60%</b>
+          </div>
+
+          <div class="rate-item rank-c">
+            <strong>C</strong>
+            <span>Común+</span>
+            <b>25%</b>
+          </div>
+
+          <div class="rate-item rank-b">
+            <strong>B</strong>
+            <span>Raro</span>
+            <b>10%</b>
+          </div>
+
+          <div class="rate-item rank-a">
+            <strong>A</strong>
+            <span>Épico</span>
+            <b>4%</b>
+          </div>
+
+          <div class="rate-item rank-s">
+            <strong>S</strong>
+            <span>Legendario</span>
+            <b>1%</b>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         COLECCIÓN
+         ========================= -->
+
+    <section id="inventorySection" class="game-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>🃏 Mi colección</h2>
+          <p>Haz clic en una carta para verla ampliada.</p>
+        </div>
+
+        <div class="collection-counter">
+          <span id="inventoryCount">0</span> cartas
+        </div>
+      </div>
+
+      <div id="inventoryGrid" class="inventory-grid"></div>
+
+      <div id="emptyInventory" class="empty-state">
+        <div>🃏</div>
+        <h3>Tu colección está vacía</h3>
+        <p>Abre un sobre para conseguir tus primeros Yagos.</p>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         YAGOS / CATÁLOGO
+         ========================= -->
+
+    <section id="yagosSection" class="game-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>👤 Yagos</h2>
+          <p>Consulta todas las cartas disponibles.</p>
+        </div>
+      </div>
+
+      <div id="yagosGrid" class="catalog-grid"></div>
+
+    </section>
+
+
+    <!-- =========================
+         HISTORIAL
+         ========================= -->
+
+    <section id="historySection" class="game-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>📜 Historial</h2>
+          <p>Consulta tus sobres abiertos y movimientos.</p>
+        </div>
+      </div>
+
+      <div id="historyList" class="history-list"></div>
+
+    </section>
+
+
+    <!-- =========================
+         AJUSTES
+         ========================= -->
+
+    <section id="settingsSection" class="game-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>⚙️ Ajustes</h2>
+          <p>Opciones de tu cuenta.</p>
+        </div>
+      </div>
+
+      <div class="settings-panel">
+
+        <div class="setting-row">
+          <div>
+            <h3>👤 Usuario</h3>
+            <p id="settingsUsername">-</p>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h3>⭐ Puntos</h3>
+            <p id="settingsPoints">0</p>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h3>🃏 Cartas diferentes</h3>
+            <p id="settingsCards">0</p>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h3>📦 Sobres abiertos</h3>
+            <p id="settingsPacks">0</p>
+          </div>
+        </div>
+
+        <div class="setting-row">
+          <div>
+            <h3>💰 Valor de repetidas</h3>
+            <p>Las cartas repetidas pueden venderse por puntos.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ADMIN
+         ========================= -->
+
+    <section id="adminSection" class="game-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>🛠️ Panel de administración</h2>
+          <p>Gestiona puntos y cartas de cualquier cuenta.</p>
+        </div>
+      </div>
+
+
+      <div class="admin-grid">
+
+        <!-- DAR PUNTOS -->
+
+        <div class="admin-panel">
+          <h3>⭐ Dar puntos</h3>
+
+          <label for="adminPointsUser">
+            Usuario
+          </label>
+
+          <select id="adminPointsUser"></select>
+
+          <label for="adminPointsAmount">
+            Cantidad de puntos
+          </label>
+
+          <input
+            id="adminPointsAmount"
+            type="number"
+            min="1"
+            step="1"
+            placeholder="Ej. 5000"
+          >
+
+          <button id="adminGivePointsButton" class="admin-action-button">
+            Dar puntos
+          </button>
+        </div>
+
+
+        <!-- DAR CARTA -->
+
+        <div class="admin-panel">
+          <h3>🃏 Dar carta</h3>
+
+          <label for="adminCardUser">
+            Usuario
+          </label>
+
+          <select id="adminCardUser"></select>
+
+          <label for="adminCardSelect">
+            Carta
+          </label>
+
+          <select id="adminCardSelect"></select>
+
+          <label for="adminCardAmount">
+            Cantidad
+          </label>
+
+          <input
+            id="adminCardAmount"
+            type="number"
+            min="1"
+            value="1"
+            step="1"
+          >
+
+          <button id="adminGiveCardButton" class="admin-action-button">
+            Dar carta
+          </button>
+        </div>
+
+      </div>
+
+
+      <div class="admin-users-panel">
+        <h3>👥 Cuentas</h3>
+        <div id="adminUsersList"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<!-- =========================
+     MODAL DE APERTURA
+     ========================= -->
+
+<div id="packModal" class="modal hidden">
+
+  <div class="modal-overlay"></div>
+
+  <div class="modal-content pack-opening-modal">
+
+    <button
+      id="closePackModal"
+      class="modal-close"
+      type="button"
+    >
+      ×
+    </button>
+
+    <div id="packOpeningScreen" class="pack-opening-screen">
+
+      <div class="opening-envelope">
+        <div class="opening-envelope-top"></div>
+        <div class="opening-envelope-body">
+          <span id="openingPackSymbol">🃏</span>
+        </div>
+      </div>
+
+      <h2 id="openingTitle">Abriendo sobre...</h2>
+
+      <div class="opening-loader">
+        <div></div>
+      </div>
+
+    </div>
+
+
+    <div id="packResultsScreen" class="pack-results-screen hidden">
+
+      <h2>✨ Tus cartas</h2>
+
+      <p class="result-help">
+        Las cartas aparecen boca abajo.
+        Haz clic en cada una para descubrirla.
+      </p>
+
+      <div id="packResults" class="pack-results"></div>
+
+      <button
+        id="finishPackButton"
+        class="primary-button finish-button hidden"
+        type="button"
+      >
+        Continuar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     MODAL CARTA AMPLIADA
+     ========================= -->
+
+<div id="cardDetailModal" class="modal hidden">
+
+  <div class="modal-overlay"></div>
+
+  <div class="modal-content card-detail-modal">
+
+    <button
+      id="closeCardDetail"
+      class="modal-close"
+      type="button"
+    >
+      ×
+    </button>
+
+    <div id="cardDetailContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast"></div>
